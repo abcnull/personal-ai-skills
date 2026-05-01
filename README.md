@@ -10,6 +10,10 @@
     - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
     - git（git 相关） 
         - git-commit-message.md（msg 总结的 skill）
+    - individual-dev-model（个人 AI 驱动开发 skills）
+        - inquiry-prd.md（让 AI 找出需求存在的问题）
+        - dev-design-spec.md（按照指定的规范来设计技术文档）
+        - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
 ### SDD 开发模式
 
