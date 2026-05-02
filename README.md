@@ -4,9 +4,9 @@
 
 自己使用编辑器开发时候，依据个人的一些习惯写的的一些个人 skills 模版
 
-无需 fork 不接 pr
+无需 fork 无需 pr
 
-## skills 结构
+## `skills/` 结构
 
 - dev（开发 skills）
   - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
@@ -17,7 +17,10 @@
     - dev-design-spec.md（按照指定的规范来设计技术文档）
     - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
-### SDD 开发模式
+- agent（测试工程师 agent）
+    - general-professional-test-engineer.md（通用专业测试工程师 agent）
+
+### `individual-dev-model/`：SDD 开发模式
 
 企业开发的 SDD 就尽可能规范标准一些，个人 SDD 开发尽可能灵活一些
 
