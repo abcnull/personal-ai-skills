@@ -1,19 +1,21 @@
 # personal-ai-skills
 
 ## 简介
+
 自己使用编辑器开发时候，依据个人的一些习惯写的的一些个人 skills 模版
 
 无需 fork 不接 pr
 
 ## skills 结构
+
 - dev（开发 skills）
-    - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
-    - git（git 相关） 
-        - git-commit-message.md（msg 总结的 skill）
-    - individual-dev-model（个人 AI 驱动开发 skills）
-        - inquiry-prd.md（让 AI 找出需求存在的问题）
-        - dev-design-spec.md（按照指定的规范来设计技术文档）
-        - dev-requirement.md（按照指定的规范来全流程开发和测试）
+  - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
+  - git（git 相关）
+    - git-commit-message.md（msg 总结的 skill）
+  - individual-dev-model（个人 AI 驱动开发 skills）
+    - inquiry-prd.md（让 AI 找出需求存在的问题）
+    - dev-design-spec.md（按照指定的规范来设计技术文档）
+    - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
 ### SDD 开发模式
 
@@ -22,23 +24,47 @@
 #### 个人独立开发 SDD
 
 ##### 简单版
+
 如果想要更加精简，简便的版本：这里更像是 SDD + TDD 的结合简化
 
 【出需求和测试用例】
+
 1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 `prd.md` 和 `testcase.md` 文件
 2. AI+开发者：使用先定义好的 `inquiry-prd.md` 让 AI 按照指定模版提问题，来让开发者加深对这个需求的认知，然后让开发者修补需求和测试用例
 
 【出技术】
+
 1. AI+开发者：开发者告知 AI 基本的技术栈，让 AI 使用先定义好的 `dev-design-spec.md` 规则来让 AI 按照一定规范出技术方案文档 `dev-design.md`，其中去细化各个模块
 
 【开发】
+
 1. AI：按照 `dev-requirement.md` 要求进行标准化的开发，其中包括开发规范，开发记录，git 提交规范等。可考虑多 agent 划分模块开发
 
 【测试】
+
 1. AI：开发完后，`dev-requirement.md` 中对开发完后的测试有要求，要求测试完之前已经写好的每条用例，确保都满足要求，否则调修复问题，并重新全量执行测试用例，循环，知道测试用例全部通过
 
+开发时候的文档结构如下：
+
+```markdown
+- doc
+  - skill
+    - inquiry-prd.md（自行编写，为了拿到最终 prd）
+    - dev-design-spec.md（自行编写，为了拿到最终 dev-design）
+    - dev-requirement.md（自行编写，为了拿到最终代码）
+  - core-article
+    - prd.md（自行编写）
+    - testcase.md（自行编写）
+    - dev-design.md（AI 生成）
+  - dev-record
+    - dev-record202605020950.md（AI 生成）
+    - dev-record202605021000.md（AI 生成）
+```
+
 ##### 复杂版
+
 整体过程：
+
 1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 prd.md
 2. AI：AI 借助已定义好的模版来拆解需求、挖歧义、列疑问清单、列边缘场景，产出 `需求解析文档.md`
 3. 开发者自己：开发者想清楚各种问题并补充完善 `需求解析文档.md`
@@ -50,37 +76,41 @@
 9. AI：开始完全自动开发，并自行检测
 10. 开发者自己：手动测试
 
-
 #### 企业生产项目 SDD 开发
 
 阶段一：输出原始业务需求、业务背景、约束条件，最终产出 `需求解析文档.md`（中间文档）
+
 1. PM 做：把 PRD 写清楚（最好前期和 PM 定好 PRD 写作规范，尽量按照规范把 PRD 写好，让后续的识别更容易），PM 产出 `PRD.md`
 2. AI 做：AI 依据用户已定义好的模版来拆解需求、挖歧义、列疑问清单、列边缘场景，产出 `需求解析文档.md`
 3. PM/RD/QA/UI 做：PM，RD，QA，UI 各方一起对清确认好问题细节，并产出临时专门的问题解答版本 md 投喂给 AI
 4. AI：修复更新 `需求解析文档.md`，定稿
 
 阶段二：写 SDD 规范（最核心部分），最终产出 `SDD 模式的需求文档.md`（冻结文档）
+
 1. AI 做：结合 `需求解析文档.md`，AI 依据用户已定义好的模版来生成一个 `SDD 模式的需求文档.md`，其只定义做什么、不写实现、必须带验收标准、异常流程、非功能需求
 2. PM/RD/QA/UI 做：各方一起确认不合理的地方，并产出临时专门的不合理确认单 md 投喂给 AI
 3. AI 做：修复更新 `SDD 模式的需求文档.md`，定稿
 
 阶段三：技术设计，最终产出 `技术方案.md`（冻结文档）
+
 1. RD 做：由于 AI 并不清楚 RD 团队所熟悉的技术栈以及公司现有的技术基建，所以需要人进行技术选型并告知 AI
 2. AI 做：AI 结合之前的 `SDD 模式的需求文档.md` 生成 `技术方案.md`。其中含有技术方案、模块划分、C4 架构图、数据库模型、API 接口契约
 3. PM/RD/QA 做：各方确认技术方案无误合理，确认不合理的地方，并产出临时专门的不合理确认单 md 投喂给 AI
 4. AI 做：修复更新 `技术方案.md`，定稿
 
 阶段四：任务拆解分配，最终产出多个 `模块开发任务.md`
+
 1. AI 做：AI 主要通过 `SDD 模式的需求文档.md` 和 `技术方案.md` 进行任务拆解，比如：建表、写 DAO、写接口等等，控制颗粒度、避免任务过大或过小，产出多个 `模块开发任务.md`
 2. RD 做：多个 RD 领取 md 进行分工负责
 
 阶段五：coding + unit testing，产出代码（冻结）
+
 1. AI 做：结合 `SDD 模式的需求文档.md`，`技术方案.md`，`模块开发任务.md`，来进行 AI 开发，并快速检测
 2. RD 做：人去 review 代码，并修复
 3. AI 做：AI 生成单测，跑通测试
 
 阶段六：测试，产出测试用例（冻结）
+
 1. QA 做：按照原始 PRD，进行系统和系统之间的最终的测试，提 bug
 2. RD/AI 做：修复 bug
 3. RD/AI 做：同步更新 `SDD 模式的需求文档.md`，`技术方案.md`
-
