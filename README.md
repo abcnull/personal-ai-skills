@@ -58,15 +58,15 @@
 
 ```markdown
 - .trae/（如果用 trae 开发）
-  - spec
-    - skill
+  - specs/
+    - skill/
       - inquiry-prd.md（已写好的模版，为了拿到最终 prd）
       - dev-design-requirements.md（已写好的模版，为了拿到最终 dev-design）
       - dev-requirement.md（已写好的模版，为了拿到最终代码）
-    - dev-record
+    - dev-record/
       - dev-record202605020950.md（AI 生成）
       - dev-record202605021000.md（AI 生成）
-    - bug
+    - bug/
       - bug202605021150.md（AI 生成）
 - doc（这里的文档是需要随项目封存的）
   - prd.md（自行编写）

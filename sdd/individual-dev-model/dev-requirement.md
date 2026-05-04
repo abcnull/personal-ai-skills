@@ -45,7 +45,7 @@ description: 当用户给出需求和技术方案时，需要你来进行全流�
 
 #### 开发记录文档输出要求
 
-输出的开发记录的 md 文档，你需要起名为 `dev-record-yyyyMMddHHmmss.md` 的形式 ，其中 `yyyyMMddHHmmss` 是文档编写的时间点。需存放在项目下的 `.trae/spec/dev-record/` 目录中，若无此路径则需帮用户创建。最终可以看到类似如下文件 `.trae/spec/dev-record/dev-record-20260801100123.md`
+输出的开发记录的 md 文档，你需要起名为 `dev-record-yyyyMMddHHmmss.md` 的形式 ，其中 `yyyyMMddHHmmss` 是文档编写的时间点。需存放在项目下的 `.trae/specs/dev-record/` 目录中，若无此路径则需帮用户创建。最终可以看到类似如下文件 `.trae/specs/dev-record/dev-record-20260801100123.md`
 
 ### git add 和 git commit 的要求
 
