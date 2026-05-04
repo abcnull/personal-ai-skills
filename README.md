@@ -6,7 +6,7 @@
 
 无需 fork 无需 pr
 
-## `skills/` 结构
+## `skills/` 各种技能汇总
 
 - dev（开发 skills）
   - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
@@ -14,72 +14,67 @@
     - git-commit-message.md（msg 总结的 skill）
   - individual-dev-model（个人 AI 驱动开发 skills）
     - inquiry-prd.md（让 AI 找出需求存在的问题）
-    - dev-design-spec.md（按照指定的规范来设计技术文档）
+    - dev-design-requirements.md（按照指定的规范来设计技术文档）
     - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
 - agent（测试工程师 agent）
     - general-professional-test-engineer.md（通用专业测试工程师 agent）
 
-### `individual-dev-model/`：SDD 开发模式
+## `sdd/` SDD 开发模式中各种技能文档
 
 企业开发的 SDD 就尽可能规范标准一些，个人 SDD 开发尽可能灵活一些
 
-#### 个人独立开发 SDD
-
-##### 简单版
+### `sdd/individual-dev-model/` 个人独立开发
 
 如果想要更加精简，简便的版本：这里更像是 SDD + TDD 的结合简化
 
-【出需求和测试用例】
+【环节：需求和测试用例】
+- `inquiry-prd.md` => 「限制」`prd.md`
+- 人工 =>「维护」`prd.md`
+- 人工 =>「维护」`testcase.md`
+
 
 1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 `prd.md` 和 `testcase.md` 文件
 2. AI+开发者：使用先定义好的 `inquiry-prd.md` 让 AI 按照指定模版提问题，来让开发者加深对这个需求的认知，然后让开发者修补需求和测试用例
 
-【出技术】
+【环节：技术方案】
+- `dev-design-requirements.md` => 「限制」`dev-design.md`
+- `prd.md` => 「生成」`dev-design.md`
 
-1. AI+开发者：开发者告知 AI 基本的技术栈，让 AI 使用先定义好的 `dev-design-spec.md` 规则来让 AI 按照一定规范出技术方案文档 `dev-design.md`，其中去细化各个模块
+1. AI+开发者：开发者告知 AI 基本的技术栈，让 AI 使用先定义好的 `dev-design-requirements.md` 规则来让 AI 按照一定规范出技术方案文档 `dev-design.md`，其中去细化各个模块
 
-【开发】
+【环节：开发代码】
+- `dev-requirement.md` => 「限制」代码
+- `dev-design.md` =>「生成」代码
 
 1. AI：按照 `dev-requirement.md` 要求进行标准化的开发，其中包括开发规范，开发记录，git 提交规范等。可考虑多 agent 划分模块开发
 
-【测试】
+【环节：测试】
+- `testcase.md` =>「生成」修复代码
 
 1. AI：开发完后，`dev-requirement.md` 中对开发完后的测试有要求，要求测试完之前已经写好的每条用例，确保都满足要求，否则调修复问题，并重新全量执行测试用例，循环，知道测试用例全部通过
 
 开发时候的文档结构如下：
 
 ```markdown
-- doc
-  - skill
-    - inquiry-prd.md（自行编写，为了拿到最终 prd）
-    - dev-design-spec.md（自行编写，为了拿到最终 dev-design）
-    - dev-requirement.md（自行编写，为了拿到最终代码）
-  - core-article
-    - prd.md（自行编写）
-    - testcase.md（自行编写）
-    - dev-design.md（AI 生成）
-  - dev-record
-    - dev-record202605020950.md（AI 生成）
-    - dev-record202605021000.md（AI 生成）
+- .trae/（如果用 trae 开发）
+  - spec
+    - skill
+      - inquiry-prd.md（已写好的模版，为了拿到最终 prd）
+      - dev-design-requirements.md（已写好的模版，为了拿到最终 dev-design）
+      - dev-requirement.md（已写好的模版，为了拿到最终代码）
+    - dev-record
+      - dev-record202605020950.md（AI 生成）
+      - dev-record202605021000.md（AI 生成）
+    - bug
+      - bug202605021150.md（AI 生成）
+- doc（这里的文档是需要随项目封存的）
+  - prd.md（自行编写）
+  - testcase.md（自行编写）
+  - dev-design.md（AI 生成）
 ```
 
-##### 复杂版
-
-整体过程：
-
-1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 prd.md
-2. AI：AI 借助已定义好的模版来拆解需求、挖歧义、列疑问清单、列边缘场景，产出 `需求解析文档.md`
-3. 开发者自己：开发者想清楚各种问题并补充完善 `需求解析文档.md`
-4. 开发者自己：告知 AI 技术栈
-5. AI：AI 借助已定义好的模版来设计 `技术方案.md`
-6. 开发者自己：审核一下
-7. AI：AI 借助已定义好的模版来设计 `模块开发任务.md`
-8. 开发者自己：审核一下
-9. AI：开始完全自动开发，并自行检测
-10. 开发者自己：手动测试
-
-#### 企业生产项目 SDD 开发
+### 企业生产项目 SDD 开发
 
 阶段一：输出原始业务需求、业务背景、约束条件，最终产出 `需求解析文档.md`（中间文档）
 
