@@ -20,6 +20,7 @@ trae 中的「智能体」中配置好 `general-professional-test-engineer.md` �
     ```md
     /dev-design-requirement 技能，根据 `doc/prd.md` 需求文档来产出技术方案文档。
     ```
+    如果你有想要指定的技术栈，你需要在提示词中来指定，这是推荐的方式！
 7. 等待智能体完成后，看看 `doc/dev-design.md` 是否符合自己的要求并作维护
 8. 对话框编写提示词，让进行技术开发：
     ```md
