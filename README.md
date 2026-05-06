@@ -13,7 +13,7 @@
   - git（git 相关）
     - git-commit-message.md（msg 总结的 skill）
   - individual-dev-model（个人 AI 驱动开发 skills）
-    - inquiry-prd.md（让 AI 找出需求存在的问题）
+    - prd-inquiry.md（让 AI 找出需求存在的问题）
     - dev-design-requirements.md（按照指定的规范来设计技术文档）
     - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
@@ -29,13 +29,13 @@
 如果想要更加精简，简便的版本：这里更像是 SDD + TDD 的结合简化
 
 【环节：需求和测试用例】
-- `inquiry-prd.md` => 「限制」`prd.md`
+- `prd-inquiry.md` => 「限制」`prd.md`
 - 人工 =>「维护」`prd.md`
 - 人工 =>「维护」`testcase.md`
 
 
 1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 `prd.md` 和 `testcase.md` 文件
-2. AI+开发者：使用先定义好的 `inquiry-prd.md` 让 AI 按照指定模版提问题，来让开发者加深对这个需求的认知，然后让开发者修补需求和测试用例
+2. AI+开发者：使用先定义好的 `prd-inquiry.md` 让 AI 按照指定模版提问题，来让开发者加深对这个需求的认知，然后让开发者修补需求和测试用例
 
 【环节：技术方案】
 - `dev-design-requirements.md` => 「限制」`dev-design.md`
@@ -60,7 +60,7 @@
 - .trae/（如果用 trae 开发）
   - specs/
     - skill/
-      - inquiry-prd.md（已写好的模版，为了拿到最终 prd）
+      - prd-inquiry.md（已写好的模版，为了拿到最终 prd）
       - dev-design-requirements.md（已写好的模版，为了拿到最终 dev-design）
       - dev-requirement.md（已写好的模版，为了拿到最终代码）
     - dev-record/

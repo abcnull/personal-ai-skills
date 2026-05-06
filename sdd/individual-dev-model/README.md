@@ -4,7 +4,7 @@
 这篇文档非 skill，只是为了记录 `sdd/individual-dev-model` 目录下的其他 skill 对于个人开发者来说具体怎么使用。如下有具体使用方式
 
 ## 前置环节
-trae 中的「技能与命令」中配置好 `inquiry-prd.md`,`dev-design-requirement.md`,`dev-requirement.md`
+trae 中的「技能与命令」中配置好 `prd-inquiry.md`,`dev-design-requirement.md`,`dev-requirement.md`
 
 trae 中的「智能体」中配置好 `general-professional-test-engineer.md` 这个测试智能体
 
@@ -13,7 +13,7 @@ trae 中的「智能体」中配置好 `general-professional-test-engineer.md` �
 2. 人工编写尽量全面的 `doc/testcase.md` 测试用例
 3. 对话框编写提示词，让找出需求的问题：
     ```md
-    /inquiry-prd 帮我看看这个 `doc/prd.md` 需求文档存在什么问题？
+    /prd-inquiry 帮我看看这个 `doc/prd.md` 需求文档存在什么问题？
     ```
 5. 等待智能体回复后，人工维护 `doc/prd.md` 和 `doc/testcase.md` 文件
 6. 对话框编写提示词，让产出技术方案文档：
