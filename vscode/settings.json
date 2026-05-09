@@ -1,0 +1,70 @@
+{
+    /* 主题和颜色 */
+    "workbench.colorTheme": "dark-jetbrains-color-theme",
+    "editor.bracketPairColorization.enabled": true, // 开启着色
+    "editor.bracketPairColorization.independentColors": true,
+    "editor.guides.bracketPairs": true,
+    "workbench.colorCustomizations": { // 紫 橙 蓝 绿 黄 靛 红
+        // 第一层括号颜色
+        "editorBracketHighlight.foreground1": "#ee1eee",
+        // 第二层括号颜色
+        "editorBracketHighlight.foreground2": "#FFA500",
+        // 第三层括号颜色
+        "editorBracketHighlight.foreground3": "#8585e8",
+        // 第四层括号颜色（可选）
+        "editorBracketHighlight.foreground4": "#008000",
+        // 第五层括号颜色（可选）
+        "editorBracketHighlight.foreground5": "#e6e636",
+        // 第六层括号颜色（可选）
+        "editorBracketHighlight.foreground6": "#a958e3",
+        // 不匹配括号颜色（推荐醒目红色）
+        "editorBracketHighlight.unexpectedBracket.foreground": "#FF0000"
+    },
+    "editor.language.colorizedBracketPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ]
+    ],
+    /* Java 展示父类子类图标，方便跳转 */
+    "editor.codeLens": true, // 全局启用CodeLens
+    "java.implementationCodeLens": "all", // 显示所有实现类的CodeLens按钮
+    "java.referencesCodeLens.enabled": true, // 显示引用计数
+    /* 格式 */
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[spring-boot-properties-yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    /* git */
+    "git.autofetch": true,
+    /* 配置拼写检查 */
+    "cSpell.language": "en,zh",
+    "cSpell.ignoreWords": [
+        "abcnull",
+        "println",
+        "printf",
+        "trae",
+    ],
+}

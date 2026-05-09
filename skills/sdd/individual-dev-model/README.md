@@ -1,12 +1,12 @@
 # 个人怎么用 SDD+TDD 让 AI 主导项目开发
 
 ## 简介
-这篇文档非 skill，只是为了记录 `sdd/individual-dev-model` 目录下的其他 skill 对于个人开发者来说具体怎么使用。如下有具体使用方式
+这篇文档非 skill，只是为了记录个人开发者来说具体怎么使用这套特别定制化的 SDD。如下有具体使用方式
 
 ## 前置环节
 trae 中的「技能与命令」中配置好 `prd-inquiry.md`,`dev-design-requirement.md`,`dev-requirement.md`
 
-trae 中的「智能体」中配置好 `general-professional-test-engineer.md` 这个测试智能体
+trae 中的「智能体」中可以配置 `general-professional-test-engineer.md` 这个测试智能体
 
 ## 具体步骤
 1. 人工编写完整的 `doc/prd.md` 需求

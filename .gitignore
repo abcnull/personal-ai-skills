@@ -1,11 +1,13 @@
+# 项目目录
 target/
 
-.DS_Store
-
+# 编程工具
 .vscode/
-
 .idea/
-
 .trae/
-
 .cursor/
+
+# 其他
+.DS_Store
+.history/
+.specs/

@@ -8,23 +8,23 @@
 
 ## `skills/` 各种技能汇总
 
+### `dev/` 开发相关技能
+
 - dev（开发 skills）
   - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
   - git（git 相关）
     - git-commit-message.md（msg 总结的 skill）
-  - individual-dev-model（个人 AI 驱动开发 skills）
-    - prd-inquiry.md（让 AI 找出需求存在的问题）
-    - dev-design-requirements.md（按照指定的规范来设计技术文档）
-    - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
-- agent（测试工程师 agent）
-    - general-professional-test-engineer.md（通用专业测试工程师 agent）
-
-## `sdd/` SDD 开发模式中各种技能文档
+### `sdd/` SDD 开发模式中各种技能文档
 
 企业开发的 SDD 就尽可能规范标准一些，个人 SDD 开发尽可能灵活一些
 
-### `sdd/individual-dev-model/` 个人独立开发
+#### `individual-dev-model/` 个人独立开发
+
+- individual-dev-model（个人 AI 驱动开发 skills）
+    - prd-inquiry.md（让 AI 找出需求存在的问题）
+    - dev-design-requirements.md（按照指定的规范来设计技术文档）
+    - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
 如果想要更加精简，简便的版本：这里更像是 SDD + TDD 的结合简化
 
@@ -74,7 +74,7 @@
   - dev-design.md（AI 生成）
 ```
 
-### 企业生产项目 SDD 开发
+#### 企业生产项目 SDD 开发
 
 阶段一：输出原始业务需求、业务背景、约束条件，最终产出 `需求解析文档.md`（中间文档）
 
@@ -112,3 +112,13 @@
 1. QA 做：按照原始 PRD，进行系统和系统之间的最终的测试，提 bug
 2. RD/AI 做：修复 bug
 3. RD/AI 做：同步更新 `SDD 模式的需求文档.md`，`技术方案.md`
+
+## `agent/` 测试工程师 agent
+
+- agent（各种 agent）
+    - general-professional-test-engineer.md（通用专业测试工程师 agent）
+
+## `vscode/` vscode 中的常用配置
+
+- vscode（vscode 中的常用配置）
+    - settings.json（vscode 中的 settings 常用配置）
