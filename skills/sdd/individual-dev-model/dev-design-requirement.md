@@ -1,5 +1,5 @@
 ---
-name: 按照规范来设计技术方案文档
+name: dev-design-requirement
 description: 当用户给出需求文档和一些技术栈时，需要你设计出技术方案文档并存放于指定位置
 ---
 

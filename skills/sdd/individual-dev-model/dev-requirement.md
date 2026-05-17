@@ -1,5 +1,5 @@
 ---
-name: 按照规范来开发和测试
+name: dev-requirement
 description: 当用户给出需求和技术方案时，需要你来进行全流程的开发任务。
 ---
 
