@@ -7,7 +7,7 @@ description: 当用户需要快速捡起 springboot 后端开发知识，需要�
 
 ## 此文档目的
 
-为了方便自己快速捡起 springboot 的后端开发知识，此文档主要做一些整体的知识概要
+为了方便自己快速捡起 springboot 的后端开发的整体知识，此文档主要做一些整体的知识概要
 
 ## 简介
 
@@ -68,23 +68,42 @@ project/
    - 标注 `@SpringBootApplication`
    - 调用 `SpringApplication.run(DemoApplication.class, args)`
 
-2. **自动配置**：springboot 扫描 classpath，根据依赖自动装配 Bean
+2. **加载配置**：`application.yml` / `application.properties`
+   - 先加载配置文件，解析配置值
+   - 按 `application-{profile}.yml` 加载多环境配置
+
+3. **自动配置**：springboot 扫描 classpath，根据依赖自动装配 Bean
+   - 基于加载的配置，创建并初始化 Bean（如 DataSource、SqlSessionFactory）
    - 如引入 `spring-boot-starter-web`，自动配置 Tomcat、Spring MVC
    - 如引入 `mybatis-spring-boot-starter`，自动配置数据源、SqlSessionFactory
 
-3. **加载配置**：`application.yml` / `application.properties`
-   - 按 `application-{profile}.yml` 加载多环境配置
+4. **接收请求**：`Filter`（过滤器）→ `DispatcherServlet`（中央调度器）→ `Interceptor`（拦截器）
+   - Filter 最先拦截（字符编码、跨域处理等）
+   - DispatcherServlet 统一接收并分发请求
+   - Interceptor 拦截处理（登录校验、权限检查等）
 
-4. **接收请求**：`Controller` 层
-   - `@RestController` + `@RequestMapping` / `@GetMapping` 等映射 URL
+5. **路由分发**：`HandlerMapping` 根据 URL 找到对应的 Controller 方法
 
-5. **业务处理**：`Service` 层
-   - `@Service` 标注，通过 `@Autowired` / `@Resource` 注入依赖
+6. **业务处理**：`Controller` 层 → `Service` 层
+   - Controller 接收参数，调用 Service
+   - Service 处理业务逻辑
 
-6. **数据访问**：`Mapper` 层（mybatis）或 `Repository` 层（jpa）
+7. **数据访问**：`Mapper` 层（mybatis）或 `Repository` 层（jpa）
    - 操作数据库，返回结果
 
-7. **响应返回**：Controller 将结果封装为 JSON 返回给前端
+8. **响应返回**：结果沿原链路返回
+   - Service → Controller 封装为 JSON
+   - Interceptor → postHandle / afterCompletion
+   - Filter → 响应输出 → HTTP Response
+
+**Filter 与 Interceptor 的区别：**
+
+| 项 | Filter | Interceptor |
+|---|---|---|
+| 所属 | Servlet 规范 | Spring MVC |
+| 执行时机 | DispatcherServlet 之前 | DispatcherServlet 之后，Controller 之前 |
+| 配置方式 | `@WebFilter` 或 `FilterRegistrationBean` | 实现 `HandlerInterceptor` + 注册 |
+| 用途 | 字符编码、跨域、请求日志 | 登录校验、权限控制、性能统计 |
 
 ## 核心注解
 
