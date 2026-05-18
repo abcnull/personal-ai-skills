@@ -17,7 +17,7 @@ description: 用户需要实现一个标准化的 vue 前端路由配置模版
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## vue-router 配置
+## 开发：vue-router 配置
 
 - 安装 vue-router（如果没装的话）
 - 路由模式使用 hash 模式

@@ -17,7 +17,7 @@ description: 用户需要实现一个标准化的 vue 前端 axios 请求封装�
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## axios 封装
+## 开发：axios 封装
 
 - 安装 axios（如果没装的话）
 - 创建 request.js 实例（含拦截器）

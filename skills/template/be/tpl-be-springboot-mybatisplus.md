@@ -17,7 +17,7 @@ description: 用户需要实现一个标准化的 springboot + mybatis-plus 后�
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## mybatis-plus 配置
+## 开发：mybatis-plus 配置
 
 - 配置数据源（application.yml）
 - 创建实体类（使用 @TableName、@TableId、@TableField 等注解）

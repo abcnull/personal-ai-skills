@@ -16,7 +16,7 @@ description: 用户需要实现一个标准化的 vue 2 + element-ui 前端开�
 
 向用户说明你整体的配置方式和步骤.向用户确认是否同意继续
 
-## element-ui 配置
+## 开发：element-ui 配置
 
 - 安装 element-ui（如果没装的话）
 - 全局引入（main.js 中 Vue.use(ElementUI)）

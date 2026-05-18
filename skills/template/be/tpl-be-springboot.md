@@ -25,7 +25,7 @@ description: 给用户实现一个标准化的 springboot 的后端开发模版
 
 请使用 application.yml 而非 application.properties
 
-## 内容的填充
+## 开发：内容的填充
 你刚才补充完整体的项目结构，注意还需要填写其中最标准最简单化的例子，比如你需要配置好最简单标准化的:
 - mybatis ORM，假定用户有一个 User 数据表，里头有 age 和 name 字段
 - 使用 log4j2 日志配置

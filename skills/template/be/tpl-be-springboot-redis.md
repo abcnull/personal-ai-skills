@@ -18,7 +18,7 @@ description: 用户需要实现一个标准化的 springboot + redis 后端开�
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## redis 配置
+## 开发：redis 配置
 
 - 配置 redis 连接（application.yml）
 - 注入 StringRedisTemplate 或 RedisTemplate

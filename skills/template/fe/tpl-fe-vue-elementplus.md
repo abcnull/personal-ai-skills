@@ -16,7 +16,7 @@ description: 用户需要实现一个标准化的 vue 3 + element-plus 前端开
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## element-plus 配置
+## 开发：element-plus 配置
 
 - 安装 element-plus（如果没装的话）
 - 全局引入（main.js 中 app.use(ElementPlus)）

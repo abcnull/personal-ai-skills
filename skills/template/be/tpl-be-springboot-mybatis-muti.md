@@ -22,7 +22,7 @@ description: 用户需要实现一个标准化的 springboot + mybatis 多数据
 - 使用 @MapperScan 分别扫描不同数据源的 Mapper
 - 向用户确认是否同意继续
 
-## 多数据源配置
+## 开发：多数据源配置
 
 - 配置多个数据源（application.yml 中定义多个 datasource）
 - 创建 DataSourceConfig 配置类，分别创建多个 DataSource Bean

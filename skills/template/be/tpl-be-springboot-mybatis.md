@@ -17,7 +17,7 @@ description: 用户需要实现一个标准化的 springboot + mybatis 后端开
 
 向用户说明你整体的配置方式和步骤。向用户确认是否同意继续
 
-## mybatis 配置
+## 开发：mybatis 配置
 
 - 配置数据源（application.yml）
 - 配置 mybatis（mapper-locations、type-aliases-package）
