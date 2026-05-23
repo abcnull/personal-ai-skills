@@ -6,11 +6,26 @@
 
 无需 fork 无需 pr
 
-## `skills/` 各种技能汇总
+## 整体结构
 
-### `dev/` 开发相关技能
+```
+personal-ai-skills/
+├── dev-skill/                    # 各种开发技能
+│   ├── rule/                     # code IDE 可配置的各种开发规则
+│   ├── sdd/                      # SDD 个人开发模式
+│   ├── setup/                    # 标准化的工具/框架安装配置
+│   ├── knowledge-bank/           # 适配我个人的开发知识库
+│   └── template/                 # 代码开发的标准模版
+├── agent/                        # 各种 agent
+├── vscode/                       # 个人习惯的 vscode 常用配置
+└── README.md
+```
 
-- dev（开发 skills）
+## `dev-skill/` 各种技能汇总
+
+### `rule/` 开发相关技能
+
+- rule（开发 skills）
   - personal-rules.md（整体个人规则 skill，用于整个 AI 编辑器全局配置）
   - git（git 相关）
     - git-commit-message.md（msg 总结的 skill）
@@ -22,34 +37,37 @@
 #### `individual-dev-model/` 个人独立开发
 
 - individual-dev-model（个人 AI 驱动开发 skills）
-    - prd-inquiry.md（让 AI 找出需求存在的问题）
-    - dev-design-requirements.md（按照指定的规范来设计技术文档）
-    - dev-requirement.md（按照指定的规范来全流程开发和测试）
+  - prd-inquiry.md（让 AI 找出需求存在的问题）
+  - dev-design-requirements.md（按照指定的规范来设计技术文档）
+  - dev-requirement.md（按照指定的规范来全流程开发和测试）
 
 如果想要更加精简，简便的版本：这里更像是 SDD + TDD 的结合简化
 
 【环节：需求和测试用例】
+
 - `prd-inquiry.md` => 「限制」`prd.md`
 - 人工 =>「维护」`prd.md`
 - 人工 =>「维护」`testcase.md`
-
 
 1. 开发者自己：用户自己首先尽量想清楚需求，自行写临时的需求 `prd.md` 和 `testcase.md` 文件
 2. AI+开发者：使用先定义好的 `prd-inquiry.md` 让 AI 按照指定模版提问题，来让开发者加深对这个需求的认知，然后让开发者修补需求和测试用例
 
 【环节：技术方案】
+
 - `dev-design-requirements.md` => 「限制」`dev-design.md`
 - `prd.md` => 「生成」`dev-design.md`
 
 1. AI+开发者：开发者告知 AI 基本的技术栈，让 AI 使用先定义好的 `dev-design-requirements.md` 规则来让 AI 按照一定规范出技术方案文档 `dev-design.md`，其中去细化各个模块
 
 【环节：开发代码】
+
 - `dev-requirement.md` => 「限制」代码
 - `dev-design.md` =>「生成」代码
 
 1. AI：按照 `dev-requirement.md` 要求进行标准化的开发，其中包括开发规范，开发记录，git 提交规范等。可考虑多 agent 划分模块开发
 
 【环节：测试】
+
 - `testcase.md` =>「生成」修复代码
 
 1. AI：开发完后，`dev-requirement.md` 中对开发完后的测试有要求，要求测试完之前已经写好的每条用例，确保都满足要求，否则修复问题，并重新全量执行测试用例，循环，直到测试用例全部通过
@@ -124,6 +142,7 @@
 - skill 名称格式，统一按照 `knl-开发方向-框架工具.md` 类似的方式来命名
 
 ### `template/` 代码模版
+
 这里存放的是开发时候各种标准代码的格式模版的提示词，比如如果我想要开发某一个标准化的功能，我让 AI 去开发时可能需要每次重复编写大量的提示词，但是我如果我把标准模块化开发的提示词做一个封存，则后续我想要开发某个非常常见的功能时，直接引用词提示词则可以让 AI 做相应模块的标准化的开发
 
 - 开发搭建整体框架项目的 skill 命名是 `tpl-开发方向-框架工具.md`
@@ -132,9 +151,9 @@
 ## `agent/` 测试工程师 agent
 
 - agent（各种 agent）
-    - general-professional-test-engineer.md（通用专业测试工程师 agent）
+  - general-professional-test-engineer.md（通用专业测试工程师 agent）
 
 ## `vscode/` vscode 中的常用配置
 
 - vscode（vscode 中的常用配置）
-    - settings.json（vscode 中的 settings 常用配置）
+  - settings.json（vscode 中的 settings 常用配置）

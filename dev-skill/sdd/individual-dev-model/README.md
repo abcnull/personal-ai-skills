@@ -3,6 +3,9 @@
 ## 简介
 这篇文档非 skill，只是为了记录个人开发者来说具体怎么使用这套特别定制化的 SDD。如下有具体使用方式
 
+## 这块内容为了解决什么？
+为了解决能让 AI 更好的主导项目开发
+
 ## 前置环节
 trae 中的「技能与命令」中配置好 `prd-inquiry.md`,`dev-design-requirement.md`,`dev-requirement.md`
 
