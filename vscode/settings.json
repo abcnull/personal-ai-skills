@@ -67,4 +67,6 @@
         "printf",
         "trae",
     ],
+    /* vscode 设置 */
+    "files.autoSave": "afterDelay", // 自动保存，默认 1s 后
 }
