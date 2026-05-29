@@ -1,5 +1,5 @@
 ---
-name: knl-fe-vue
+name: knl-fe-vue-element
 description: 当用户需要快速捡起 vue 前端开发知识，需要快速上手掌握 vue 前端开发核心知识时使用
 ---
 
@@ -11,7 +11,7 @@ description: 当用户需要快速捡起 vue 前端开发知识，需要快速�
 
 ## 简介
 
-一般前端开发，老的 vue 项目一般用：
+一般企业做后台管理系统的前端 web 开发，老的 vue 项目一般用：
 
 - vue 2 + element ui + vue cli(webpack 构建工具) + vue-router + axios
 - 老的项目一般用 js
@@ -40,6 +40,9 @@ project/
 │   │   └── index.js
 │   ├── App.vue              # 根组件
 │   └── main.js              # 入口文件
+├── .env                     # 环境变量（所有环境）
+├── .env.development         # 开发环境变量
+├── .env.production          # 生产环境变量
 ├── package.json             # 项目依赖和脚本配置
 ├── vue.config.js            # vue-cli 配置文件（可选）
 └── babel.config.js          # babel 转译配置
@@ -62,6 +65,9 @@ project/
 │   ├── App.vue
 │   └── main.js / main.ts
 ├── index.html               # vite 入口 HTML（在根目录）
+├── .env                     # 环境变量（所有环境）
+├── .env.development         # 开发环境变量
+├── .env.production          # 生产环境变量
 ├── package.json
 ├── vite.config.js / vite.config.ts
 └── vite-env.d.ts            # vite 类型声明（ts 项目）
@@ -249,5 +255,114 @@ app.use(ElementPlus)
 | 全局引入 | `Vue.use(ElementUI)` | `app.use(ElementPlus)` |
 | CSS 路径 | `element-ui/lib/theme-chalk/index.css` | `element-plus/dist/index.css` |
 | 组件用法 | 基本相同，部分属性名有调整（如 `v-model` 代替 `visible.sync`） |
+
+### 配置文件介绍
+#### package.json
+
+**scripts 命令对比：**
+
+| 命令 | vue-cli | vite |
+|------|---------|------|
+| 启动 | `npm run serve` | `npm run dev` |
+| 构建 | `npm run build` | `npm run build` |
+| lint | `npm run lint` | `npm run lint` |
+
+**vue-cli 写法：**
+
+```json
+{
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  }
+}
+```
+
+**vite 写法：**
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src"
+  }
+}
+```
+
+**依赖版本写法：**
+
+| 写法 | 含义 |
+|------|------|
+| `^1.2.3` | 允许小版本更新（推荐） |
+| `~1.2.3` | 仅允许补丁更新 |
+| `1.2.3` | 精确版本 |
+
+#### 环境配置文件
+
+**命名规范：**
+
+```
+.env                # 所有环境加载
+.env.development    # 开发环境
+.env.production     # 生产环境
+.env.local          # 本地覆盖（git 忽略）
+```
+
+**变量命名规范：**
+
+| 项目类型 | 前缀要求 | 示例 |
+|------|------|------|
+| vue-cli | `VUE_APP_` | `VUE_APP_API_URL` |
+| vite | `VITE_` | `VITE_API_URL` |
+
+**使用方式：**
+
+```js
+// 代码中访问
+process.env.VUE_APP_API_URL  // vue-cli
+import.meta.env.VITE_API_URL // vite
+```
+
+#### vue.config.js / vite.config.js/ts
+
+**常见配置项：**
+
+```js
+// vue.config.js（vue-cli）
+module.exports = {
+  devServer: {
+    port: 8080,                    // 开发服务器端口
+    proxy: { '/api': { target: 'http://localhost:3000' } }  // 代理
+  },
+  publicPath: '/',                 // 部署路径
+  outputDir: 'dist',              // 输出目录
+  lintOnSave: false               // 保存时是否 lint
+}
+```
+
+```js
+// vite.config.ts
+import { defineConfig } from 'vite'
+export default defineConfig({
+  server: {
+    port: 3000,                    // 开发服务器端口
+    proxy: { '/api': { target: 'http://localhost:3000' } }  // 代理
+  },
+  base: '/',                      // 部署路径
+  build: { outDir: 'dist' },      // 输出目录
+  plugins: [vue()]                // 插件
+})
+```
+
+**配置用途：**
+
+| 配置 | 作用 |
+|------|------|
+| devServer/server | 开发服务器配置（端口、代理） |
+| publicPath/base | 部署到非根目录时设置 |
+| outputDir | 生产构建输出目录 |
+| plugins | 集成插件（如 vue、jsx 等） |
 
 
