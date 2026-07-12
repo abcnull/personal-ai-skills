@@ -12,3 +12,4 @@ target/
 .history/
 .specs/
 doc/
+.claude/
