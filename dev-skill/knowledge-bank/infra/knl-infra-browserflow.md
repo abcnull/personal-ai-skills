@@ -1,6 +1,7 @@
 ---
 name: knl-infra-browserflow
 description: 当用户想要了解从浏览器发送请求开始，请求如何经历 dns，nginx，api gateway，服务后端的，这篇文档可能可以提供帮助
+disable-model-invocation: true
 ---
 
 # knl-infra-browserflow

@@ -1,6 +1,7 @@
 ---
 name: knl-auth-sso
 description: 讲解比较规范的 SSO 流程。当用户需要了解复习 SSO 的完整流程时
+disable-model-invocation: true
 ---
 
 # knl-auth-sso

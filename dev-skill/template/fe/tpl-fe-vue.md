@@ -1,6 +1,7 @@
 ---
 name: tpl-fe-vue
 description: 给用户实现一个标准化的 vue 前端开发模版
+disable-model-invocation: true
 ---
 
 # vue 前端开发模版

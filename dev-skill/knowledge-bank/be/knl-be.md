@@ -1,6 +1,7 @@
 ---
 name: knl-be
 description: 当用户需要知道后端的整体技术栈被广泛的使用情况，此文可介绍
+disable-model-invocation: true
 ---
 
 # 后端整体技术栈情况

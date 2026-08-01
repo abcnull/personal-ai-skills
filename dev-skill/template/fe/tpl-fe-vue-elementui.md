@@ -1,6 +1,7 @@
 ---
 name: tpl-fe-vue-elementui
 description: 用户需要实现一个标准化的 vue 2 + element-ui 前端开发模版
+disable-model-invocation: true
 ---
 
 # vue 2 element-ui 开发模版

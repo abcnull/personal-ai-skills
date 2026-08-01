@@ -1,6 +1,7 @@
 ---
 name: knl-be-springboot
 description: 当用户需要快速捡起 springboot 后端开发知识，需要快速上手掌握 springboot 后端开发核心知识时使用
+disable-model-invocation: true
 ---
 
 # springboot 后端开发知识概要

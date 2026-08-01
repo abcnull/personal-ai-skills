@@ -1,6 +1,7 @@
 ---
 name: tpl-fe-vue-elementplus
 description: 用户需要实现一个标准化的 vue 3 + element-plus 前端开发模版
+disable-model-invocation: true
 ---
 
 # vue 3 element-plus 开发模版

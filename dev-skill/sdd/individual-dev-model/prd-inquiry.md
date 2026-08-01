@@ -1,6 +1,7 @@
 ---
 name: prd-inquiry
 description: 当用户给出需求时，需要你找出需求文档中的问题
+disable-model-invocation: true
 ---
 
 # 找出需求存在的问题

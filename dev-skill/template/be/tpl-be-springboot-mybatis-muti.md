@@ -1,6 +1,7 @@
 ---
 name: tpl-be-springboot-mybatis-muti
 description: 用户需要实现一个标准化的 springboot + mybatis 多数据源后端开发模版
+disable-model-invocation: true
 ---
 
 # springboot mybatis 多数据源开发模版

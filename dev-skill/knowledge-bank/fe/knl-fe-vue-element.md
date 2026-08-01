@@ -1,6 +1,7 @@
 ---
 name: knl-fe-vue-element
 description: 当用户需要快速捡起 vue 前端开发知识，需要快速上手掌握 vue 前端开发核心知识时使用
+disable-model-invocation: true
 ---
 
 # vue 前端开发知识概要

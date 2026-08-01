@@ -1,6 +1,7 @@
 ---
 name: tpl-fe-vue-axios
 description: 用户需要实现一个标准化的 vue 前端 axios 请求封装模版
+disable-model-invocation: true
 ---
 
 # vue axios 请求封装模版

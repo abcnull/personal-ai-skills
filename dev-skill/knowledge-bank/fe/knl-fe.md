@@ -1,6 +1,7 @@
 ---
 name: knl-fe
 description: 当用户需要知道前端的整体技术栈被广泛的使用情况，此文可介绍
+disable-model-invocation: true
 ---
 
 # 前端整体技术栈情况

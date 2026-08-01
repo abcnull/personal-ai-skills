@@ -1,6 +1,7 @@
 ---
 name: tpl-fe-vue-router
 description: 用户需要实现一个标准化的 vue 前端路由配置模版
+disable-model-invocation: true
 ---
 
 # vue-router 路由配置模版

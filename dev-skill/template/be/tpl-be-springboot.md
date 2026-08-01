@@ -1,6 +1,7 @@
 ---
 name: tpl-be-springboot
 description: 给用户实现一个标准化的 springboot 的后端开发模版
+disable-model-invocation: true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 name: tpl-be-springboot-redis
 description: 用户需要实现一个标准化的 springboot + redis 后端开发模版
+disable-model-invocation: true
 ---
 
 # springboot redis 开发模版

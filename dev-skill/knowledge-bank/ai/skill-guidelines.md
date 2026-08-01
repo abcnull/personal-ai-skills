@@ -1,3 +1,9 @@
+---
+name: skill-guidelines
+description: 当用户需要了解 SKILL 编写规范、YAML front matter 格式要求、目录结构和最佳实践时使用
+disable-model-invocation: true
+---
+
 # SKILL 编写规范
 
 ## Anthropic 标准 Skill 目录格式

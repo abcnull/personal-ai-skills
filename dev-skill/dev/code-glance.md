@@ -1,7 +1,6 @@
 ---
 name: code-glance
 description: 对用户指定的代码进行深入分析，帮用户读懂代码并按照规范格式输出讲解
-disable-model-invocation: true
 ---
 
 # code-glance

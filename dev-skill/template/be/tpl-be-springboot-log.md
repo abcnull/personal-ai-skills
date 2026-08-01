@@ -1,6 +1,7 @@
 ---
 name: tpl-be-springboot-log
 description: 用户需要实现一个标准化的 springboot 后端开发日志模版
+disable-model-invocation: true
 ---
 
 # springboot 后端开发日志模版
