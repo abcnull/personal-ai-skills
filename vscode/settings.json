@@ -1,6 +1,4 @@
 {
-    /* 主题和颜色 */
-    "workbench.colorTheme": "dark-jetbrains-color-theme",
     "editor.bracketPairColorization.enabled": true, // 开启着色
     "editor.bracketPairColorization.independentColors": true,
     "editor.guides.bracketPairs": true,
@@ -18,7 +16,11 @@
         // 第六层括号颜色（可选）
         "editorBracketHighlight.foreground6": "#a958e3",
         // 不匹配括号颜色（推荐醒目红色）
-        "editorBracketHighlight.unexpectedBracket.foreground": "#FF0000"
+        "editorBracketHighlight.unexpectedBracket.foreground": "#FF0000",
+        // command + f 框出的关键字的背景色
+        "editor.findMatchHighlightBackground": "#255d71",
+        // command + f 框出的关键字的边框色
+        "editor.findMatchHighlightBorder": "#00e1ff"
     },
     "editor.language.colorizedBracketPairs": [
         [
@@ -66,7 +68,42 @@
         "println",
         "printf",
         "trae",
+        "mimo"
     ],
-    /* vscode 设置 */
-    "files.autoSave": "afterDelay", // 自动保存，默认 1s 后
+    "cSpell.ignoreRegExpList": [
+        "/[A-Z][A-Z_0-9]+/",
+        "/https?://[^\\s]+/"
+    ],
+    /* 其他 */
+    "chat.disableAIFeatures": false,
+    "tabnine.experimentalAutoImports": true,
+    "explorer.confirmDelete": false,
+    "trae.tab.enableSummaryAutoDisplay": true,
+    "AI.rules.importClaudeMd": true,
+    "java.debug.settings.showStaticVariables": true,
+    "AI.toolcall.v2.ide.mcp.autoRun": "alwaysRun",
+    "json.schemas": [],
+    "AI.toolcall.v2.solo.command.mode": "alwaysRun",
+    "java.editor.reloadChangedSources": "auto",
+    "workbench.settings.applyToAllProfiles": [],
+    "maven.executable.options": "",
+    "maven.pomfile.autoUpdateEffectivePOM": true,
+    "sonarlint.automaticAnalysis": true,
+    "AI.toolcall.v2.ide.command.mode": "alwaysAsk",
+    "AI.toolcall.v2.fileOp.mode": "alwaysRun",
+    "AI.agent.v2.ide.shellExecMode": true,
+    "AI.agent.v2.solo.shellExecMode": true,
+    "python.languageServer": "Default",
+    "commentTranslate.targetLanguage": "zh-CN",
+    "commentTranslate.source": "Bing",
+    "commentTranslate.maxTranslationLength": 9999,
+    "i18n-ally.translate.engines": [
+        "google",
+        "baidu"
+    ],
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "java.debug.settings.exceptionBreakpoint.skipClasses": [],
+    "cSpell.allowCompoundWords": true
 }

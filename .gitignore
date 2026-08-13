@@ -1,15 +1,16 @@
 # 项目目录
 target/
 
-# 编程工具
+# AI 编程工具
 .vscode/
 .idea/
 .trae/
 .cursor/
+.claude/
+.CLAUDE/
 
 # 其他
 .DS_Store
 .history/
 .specs/
 doc/
-.claude/
