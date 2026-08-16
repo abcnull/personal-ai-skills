@@ -297,3 +297,58 @@ class student(people):
 
 # 类的私有属性和方法，只能在类的内部使用，不可在外部使用
 ```
+
+## 异步
+
+async 标记的函数返回一个 asyncio 协程对象，而不是直接返回结果。
+await 会等待协程对象完成，直到它返回结果。
+async 不是标记是否需要异步的函数，而是用来标记一个内部是否有需要异步能力的函数，即内部有 await，所以函数必须加 async
+
+asyncio.gather() 用于并发运行多个协程，等待它们所有完成，最后返回一个列表，列表中的元素是每个协程的结果。
+```python
+import asyncio
+# 定义协程函数
+async def task1():
+    print("任务1开始")
+    await asyncio.sleep(2)  # 模拟耗时操作
+    print("任务1完成")
+    return "任务1结果"
+async def task2():
+    print("任务2开始")
+    await asyncio.sleep(1)  # 模拟耗时操作
+    print("任务2完成")
+    return "任务2结果"
+# 主协程
+async def main():
+    # 并发运行多个协程
+    results = await asyncio.gather(task1(), task2())
+    print("所有任务完成:", results)
+# 启动事件循环运行主协程
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+asyncio.create_task() 用于创建一个任务对象并立即安排执行，返回一个 Task 对象。调用后协程立即开始执行，await 只是等待阻塞协程返回结果。
+```python
+import asyncio
+async def task1():
+    print("任务1开始")
+    await asyncio.sleep(2)
+    print("任务1完成")
+    return "任务1结果"
+async def task2():
+    print("任务2开始")
+    await asyncio.sleep(1)
+    print("任务2完成")
+    return "任务2结果"
+async def main():
+    # 创建任务对象，协程立即开始执行
+    t1 = asyncio.create_task(task1())
+    t2 = asyncio.create_task(task2())
+    print("主协程继续执行其他操作")
+    # 等待任务完成
+    result1, result2 = await asyncio.gather(t1, t2)
+    print(f"结果: {result1}, {result2}")
+if __name__ == "__main__":
+    asyncio.run(main())
+```
